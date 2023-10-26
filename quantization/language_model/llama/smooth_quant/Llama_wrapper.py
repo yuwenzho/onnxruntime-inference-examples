@@ -48,7 +48,8 @@ class LlamaLM(BaseLM):
         self.model = ORTModelForCausalLM(sessions[0],
                                          config,
                                          user_model,
-                                         use_cache=False
+                                         use_cache=False,
+                                         use_io_binding=False,
                                          )
 
         self.tokenizer = transformers.LlamaTokenizer.from_pretrained(
