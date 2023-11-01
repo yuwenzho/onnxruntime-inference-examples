@@ -72,7 +72,7 @@ parser.add_argument(
     '--model_name_or_path',
     type=str,
     help="pretrained model name or path",
-    default="decapoda-research/llama-7b-hf"
+    default="meta-llama/Llama-2-7b-hf"
 )
 parser.add_argument(
     '--workspace',

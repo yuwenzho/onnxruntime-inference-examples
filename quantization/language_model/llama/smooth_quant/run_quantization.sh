@@ -29,6 +29,9 @@ function init_params {
       --alpha=*)
           alpha=$(echo $var |cut -f2 -d=)
       ;;
+      --model_name_or_path=*)
+          model_name_or_path=$(echo $var |cut -f2 -d=)
+      ;;
     esac
   done
 
@@ -63,6 +66,7 @@ function run_tuning {
             --batch_size ${batch_size-1} \
             --smooth_quant_alpha ${alpha-0.5} \
             --dataset ${dataset-NeelNanda/pile-10k} \
+            --model_name_or_path ${model_name_or_path-meta-llama/Llama-2-7b-hf} \
             --tune
 }
 

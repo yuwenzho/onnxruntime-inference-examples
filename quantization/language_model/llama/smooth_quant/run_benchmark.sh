@@ -28,6 +28,9 @@ function init_params {
       --intra_op_num_threads=*)
           intra_op_num_threads=$(echo $var |cut -f2 -d=)
       ;;
+      --model_name_or_path=*)
+          model_name_or_path=$(echo $var |cut -f2 -d=)
+      ;;
     esac
   done
 
@@ -48,6 +51,7 @@ function run_benchmark {
             --batch_size=${batch_size-1} \
             --tasks=${tasks-lambada_openai} \
             --intra_op_num_threads=${intra_op_num_threads-4} \
+            --model_name_or_path ${model_name_or_path-meta-llama/Llama-2-7b-hf} \
             --benchmark
             
 }
