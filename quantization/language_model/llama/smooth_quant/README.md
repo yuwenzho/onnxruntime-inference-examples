@@ -26,7 +26,7 @@ Note that this README.md uses meta-llama/Llama-2-7b-hf as an example. There are 
 Export to ONNX model:
 
 ```bash
-optimum-cli export onnx --model meta-llama/Llama-2-7b-hf --task text-generation-with-past ./Llama-2-7b-hf
+optimum-cli export onnx --model meta-llama/Llama-2-7b-hf --task text-generation-with-past --legacy ./Llama-2-7b-hf
 ```
 
 # Run

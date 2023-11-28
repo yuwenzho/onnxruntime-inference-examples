@@ -29,7 +29,7 @@ Note that this README.md uses meta-llama/Llama-2-7b-hf as an example. There are 
 
 Export to ONNX model:
 ```bash
-optimum-cli export onnx --model meta-llama/Llama-2-7b-hf --task text-generation-with-past ./Llama-2-7b-hf
+optimum-cli export onnx --model meta-llama/Llama-2-7b-hf --task text-generation-with-past --legacy ./Llama-2-7b-hf
 ```
 
 > Note: Llama-2-70b and Llama-2-70b-chat-hf will fail during export because of the different amounts of past keys/values and Attention. Set `--task text-generation` to disable the export with past keys/values reuse.
