@@ -113,6 +113,7 @@ args = parser.parse_args()
 # load tokenizer and config
 tokenizer = LlamaTokenizer.from_pretrained(args.model_input)
 config = LlamaConfig.from_pretrained(args.model_input)
+print('1 config', config)
 
 def tokenize_function(examples):
     example = tokenizer(examples['text'])
