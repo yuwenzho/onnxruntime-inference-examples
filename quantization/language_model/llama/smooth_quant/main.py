@@ -114,6 +114,7 @@ args = parser.parse_args()
 tokenizer = LlamaTokenizer.from_pretrained(args.model_input)
 config = LlamaConfig.from_pretrained(args.model_input)
 print('1 config', config)
+logger.info(config)
 
 def tokenize_function(examples):
     example = tokenizer(examples['text'])
