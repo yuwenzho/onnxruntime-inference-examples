@@ -256,4 +256,5 @@ if __name__ == "__main__":
                                        "SmoothQuantAlpha": args.smooth_quant_alpha,
                                        "OpTypesToExcludeOutputQuantization": ["MatMul"]})
         tokenizer.save_pretrained(args.model_output)
+        print('save config', config)
         config.save_pretrained(args.model_output)
