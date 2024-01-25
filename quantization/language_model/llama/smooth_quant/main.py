@@ -120,6 +120,13 @@ def tokenize_function(examples):
 
 def eval_func(model):
     logger.info("start to evaluate onnx model ...")
+    import os
+    import json
+    with open(os.path.join(model, 'config.json'), 'r') as f:
+        json_data = json.load(f)
+        logger.info(json_data)
+        print(json_data)
+
     results = evaluate(
         model="hf-causal",
         model_args="pretrained=" + model + ",tokenizer="+ args.model_input,
